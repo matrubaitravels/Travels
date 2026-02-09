@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrubai Travels | Travel Smart. Travel Easy.</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+.hero-bg{
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+background-size:cover;
+background-position:center;
+}
+
+.package-card:hover{
+transform:translateY(-8px);
+transition:0.4s;
+}
+
+.sticky-whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 22px;
+border-radius:50px;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+z-index:1000;
+}
+</style>
+
+</head>
+
+<body class="bg-gray-50">
+
+<!-- WhatsApp -->
+<a href="https://wa.me/917353130009?text=Hi%20Matrubai%20Travels%2C%20I%20want%20to%20book%20a%20package"
+class="sticky-whatsapp font-bold">
+<i class="fab fa-whatsapp"></i> Chat Now
+</a>
+
+<!-- HERO -->
+<section class="hero-bg h-screen flex items-center justify-center text-white text-center px-4">
+<div>
+<h1 class="text-5xl md:text-7xl font-bold mb-6">Matrubai Travels</h1>
+<p class="text-xl md:text-2xl mb-8">Travel Smart. Travel Easy.</p>
+
+<a href="#packages" class="bg-yellow-400 text-black px-8 py-4 rounded-full font-bold">
+Explore Packages
+</a>
+</div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="py-20 px-6 bg-white">
+<div class="max-w-6xl mx-auto text-center">
+<h2 class="text-4xl font-bold mb-12 text-blue-900">Trending Holiday Packages</h2>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Coastal Karnataka -->
+<div class="package-card bg-white shadow-lg rounded-xl overflow-hidden">
+<img src="https://images.unsplash.com/photo-1590490360182-c33d57733427" class="h-52 w-full object-cover">
+
+<div class="p-6 text-left">
+<h3 class="text-xl font-bold mb-2">🌊 Coastal Karnataka</h3>
+<p class="text-gray-500 mb-4">
+Gokarna • Honnavara • Murdeshwara <br>
+3 Star Stay + Transport + Breakfast
+</p>
+
+<div class="flex justify-between items-center">
+<span class="text-blue-600 font-bold">₹4,599 / Person</span>
+
+<button onclick="openEnquiry('Coastal Karnataka')" 
+class="bg-blue-600 text-white px-4 py-2 rounded font-bold">
+Book
+</button>
+
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FLIGHTS -->
+<section class="py-20 px-6 bg-gray-100">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+
+<img src="https://img.freepik.com/free-photo/place-flying-sunset-sky_1112-1132.jpg" class="rounded-xl shadow-lg">
+
+<div>
+<h2 class="text-4xl font-bold text-blue-900 mb-6">Flight Ticket Booking</h2>
+
+<p class="text-gray-600 mb-6">
+Domestic & International flight tickets at best prices.
+</p>
+
+<button onclick="openEnquiry('Flight Booking')" 
+class="bg-blue-600 text-white px-4 py-2 rounded font-bold">
+Book Flights
+</button>
+
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-blue-950 text-white py-10 px-6">
+<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+
+<div class="flex items-center gap-4">
+<img src="https://raw.githubusercontent.com/matrubaitravels/Travel-Files/refs/heads/master/Logo.png"
+style="width:60px; height:60px; object-fit:contain; background:white; border-radius:50%; padding:6px;">
+
+<div>
+<h2 class="text-2xl font-bold">Matrubai Travels</h2>
+<p class="opacity-80 text-sm">Bangalore Based Travel Company 🌍</p>
+</div>
+</div>
+
+<div class="text-left md:text-right">
+<p><i class="fas fa-phone mr-2"></i> +91 7353130009</p>
+<p><i class="fas fa-envelope mr-2"></i> support@matrubaitravels.com</p>
+<p><i class="fab fa-instagram mr-2"></i> @matrubaitravels</p>
+</div>
+
+</div>
+
+<p class="text-center mt-8 text-sm opacity-60">
+© 2026 Matrubai Travels | Travel Smart. Travel Easy.
+</p>
+</footer>
+
+<script>
+function openEnquiry(packageName){
+window.location.href = "enquire.html?package=" + encodeURIComponent(packageName);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Matrubai Travels</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+/* Background style */
+.hero-bg{
+  background: linear-gradient(rgba(11,42,91,0.9), rgba(3,19,43,0.95)),
+              url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.spinner {
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+/* Hide main content initially */
+#thankYouContent {
+  display: none;
+}
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- LOADING SCREEN -->
+<section id="loadingScreen" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4">
+  <img 
+    src="https://raw.githubusercontent.com/matrubaitravels/Travel-Files/refs/heads/master/Logo.png"
+    class="w-28 h-28 object-contain bg-white rounded-full p-2 shadow-md mb-6">
+  <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+    Preparing Your Trip Details...
+  </h1>
+  <p class="text-white opacity-80 mb-8">
+    Please wait a moment while we get things ready.
+  </p>
+  <div class="spinner"></div>
+</section>
+
+<!-- MAIN THANK YOU CONTENT -->
+<section id="thankYouContent" class="hero-bg min-h-screen flex items-center justify-center px-4">
+  <div class="bg-white rounded-3xl shadow-2xl max-w-xl w-full text-center p-10">
+
+    <!-- Logo -->
+    <img 
+      src="https://raw.githubusercontent.com/matrubaitravels/Travel-Files/refs/heads/master/Logo.png"
+      class="mx-auto w-28 h-28 object-contain bg-white rounded-full p-2 shadow-md mb-6">
+
+    <!-- Heading -->
+    <h1 class="text-4xl font-bold text-blue-900 mb-4">
+      Thank You for Your Enquiry ✈️
+    </h1>
+
+    <p class="text-gray-600 mb-6">
+      Your travel request has been successfully received.
+      Our travel expert will contact you in the next 15 hours to plan your perfect trip.
+    </p>
+
+    <!-- Highlight Box -->
+    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6">
+      <p class="font-semibold text-blue-900 mb-2">What Happens Next?</p>
+      <ul class="text-gray-600 text-sm space-y-2">
+        <li>✅ Our team reviews your enquiry</li>
+        <li>✅ We customise your travel plan</li>
+        <li>✅ We contact you via call or WhatsApp</li>
+      </ul>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917353130009"
+      class="inline-block bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold transition shadow-lg mb-4">
+      <i class="fab fa-whatsapp mr-2"></i>Chat With Us Instantly
+    </a>
+
+    <!-- Back Button -->
+    <div>
+      <a href="test.html" class="text-blue-700 font-semibold hover:underline">
+        ← Back to Homepage
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-blue-950 text-white py-6 text-center">
+  <p class="font-semibold text-lg">Matrubai Travels</p>
+  <p class="text-sm opacity-80">Travel Smart. Travel Easy.</p>
+  <p class="text-sm mt-2 opacity-70">© 2026 Matrubai Travels</p>
+</footer>
+
+<!-- SCRIPT TO SHOW MAIN CONTENT AFTER 1.5 SECONDS -->
+<script>
+  setTimeout(() => {
+    document.getElementById('loadingScreen').style.display = 'none';
+    document.getElementById('thankYouContent').style.display = 'flex';
+  }, 3500); // 3.5 seconds
+</script>
+
+</body>
+</html>
