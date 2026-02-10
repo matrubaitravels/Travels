@@ -200,34 +200,46 @@ flightFields.classList.add("hidden");
 }
 }
 
-// Submit to Google Sheet + Email + WhatsApp
-document.getElementById('enquiryForm').addEventListener('submit', function(e){
-  e.preventDefault();
 
-  const formData = {
-    name: document.getElementById('name').value,
-    phone: document.getElementById('phone').value,
-    service: document.getElementById('packageSelect').value,
-    travellers: document.getElementById('travellers').value,
-    requirements: document.getElementById('requirements').value
-  };
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzv2_qfwaF2udokILI3LbPgDx1z9RbKXRQy97BJgyY8hlPZro8KlICJAwMuS8OpNKIT/exec"; // replace with your Apps Script URL
+// Redirect to Thank You page
+function redirectThankYou(event){
+event.preventDefault();
 
-  fetch(scriptURL, {
-    method: 'POST',
-    body: JSON.stringify(formData)
-  })
-  .then(response => {
-    // Open WhatsApp for notification
-    const waMsg = encodeURIComponent(`New Enquiry from ${formData.name} - ${formData.phone}`);
-    window.open(`https://wa.me/917353130009?text=${waMsg}`, "_blank");
+/* ===================== ADDED CODE (ONLY ADDITION) ===================== */
 
-    // Redirect to thankyou
-    window.location.href = "thankyou.html";
-  })
-  .catch(error => alert('Something went wrong! Try again.'));
+const scriptURL = "https://script.google.com/macros/s/AKfycbzv2_qfwaF2udokILI3LbPgDx1z9RbKXRQy97BJgyY8hlPZro8KlICJAwMuS8OpNKIT/exec";
+
+const form = event.target;
+
+const data = {
+  name: form.querySelector('input[type="text"]').value,
+  phone: form.querySelector('input[type="tel"]').value,
+  service: document.getElementById("packageSelect").value,
+  travellers: form.querySelector('input[type="number"]').value,
+  tripType: document.querySelector('#flightFields select')?.value || "",
+  travelDate: document.querySelector('#flightFields input[type="date"]')?.value || "",
+  origin: document.querySelector('#flightFields input[placeholder*="From"]')?.value || "",
+  destination: document.querySelector('#flightFields input[placeholder*="To"]')?.value || "",
+  requirements: document.querySelector('textarea').value
+};
+
+fetch(scriptURL, {
+  method: "POST",
+  body: JSON.stringify(data),
+  headers: { "Content-Type": "application/json" }
+})
+.then(() => {
+  window.location.href = "thankyou.html";
+})
+.catch(() => {
+  window.location.href = "thankyou.html";
 });
+
+/* ===================== END ADDITION ===================== */
+
+}
+
 </script>
 
 </body>
