@@ -148,28 +148,22 @@ Why Book With Matrubai Travels
 </section>
 
 <!-- FOOTER -->
-
 <footer class="bg-blue-950 text-white py-10 px-6">
 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-
 <div class="flex items-center gap-4">
 <img src="https://raw.githubusercontent.com/matrubaitravels/Travels/refs/heads/master/Logo.png"
 style="width:60px;height:60px;object-fit:contain;background:white;border-radius:50%;padding:6px;">
-
 <div>
 <h2 class="text-2xl font-bold">Matrubai Travels</h2>
 <p class="opacity-80 text-sm">Bangalore Based Travel Company 🌍</p>
 </div>
 </div>
-
 <div class="text-left md:text-right">
 <p><i class="fas fa-phone mr-2"></i> +91 7353130009</p>
 <p><i class="fas fa-envelope mr-2"></i> support@matrubaitravels.com</p>
 <p><i class="fab fa-instagram mr-2"></i> @matrubaitravels</p>
 </div>
-
 </div>
-
 <p class="text-center mt-8 text-sm opacity-60">
 © 2026 Matrubai Travels | Travel Smart. Travel Easy.
 </p>
@@ -200,13 +194,9 @@ flightFields.classList.add("hidden");
 }
 }
 
-
-
-// Redirect to Thank You page
+// FORM SUBMIT — ONLY LOGIC FIXED
 function redirectThankYou(event){
 event.preventDefault();
-
-/* ===================== ADDED CODE (ONLY ADDITION) ===================== */
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbzv2_qfwaF2udokILI3LbPgDx1z9RbKXRQy97BJgyY8hlPZro8KlICJAwMuS8OpNKIT/exec";
 
@@ -217,11 +207,7 @@ const data = {
   phone: form.querySelector('input[type="tel"]').value,
   service: document.getElementById("packageSelect").value,
   travellers: form.querySelector('input[type="number"]').value,
-  tripType: document.querySelector('#flightFields select')?.value || "",
-  travelDate: document.querySelector('#flightFields input[type="date"]')?.value || "",
-  origin: document.querySelector('#flightFields input[placeholder*="From"]')?.value || "",
-  destination: document.querySelector('#flightFields input[placeholder*="To"]')?.value || "",
-  requirements: document.querySelector('textarea').value
+  requirements: form.querySelector('textarea').value
 };
 
 fetch(scriptURL, {
@@ -235,8 +221,6 @@ fetch(scriptURL, {
 .catch(() => {
   window.location.href = "thankyou.html";
 });
-
-/* ===================== END ADDITION ===================== */
 
 }
 
